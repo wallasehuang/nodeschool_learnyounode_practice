@@ -1,0 +1,9 @@
+var net = require('net');
+var strftime = require('strftime');
+
+var server = net.createServer(function(socket) {
+    // console.log(socket.data);
+    socket.end(strftime('%F %H:%M') + '\n');
+});
+
+server.listen(process.argv[2]);
